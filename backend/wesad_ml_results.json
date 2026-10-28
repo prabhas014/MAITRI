@@ -1,0 +1,75 @@
+{
+  "evaluation_info": {
+    "script": "evaluate_wesad.py",
+    "random_state": 42,
+    "evaluation_type": "Subject-independent held-out test set",
+    "note": "All metrics are computed on held-out WESAD subjects. Test subject windows are never used during training."
+  },
+  "stress_prediction": {
+    "model": "Random Forest (n_estimators=100)",
+    "dataset": "WESAD",
+    "dataset_type": "Real physiological dataset",
+    "classification": "Binary stress classification",
+    "label_mapping": {
+      "0": "Non-Stress",
+      "1": "Stress"
+    },
+    "window_seconds": 60,
+    "sampling_frequency_hz": 700,
+    "total_windows": 442,
+    "train_windows": 354,
+    "test_windows": 88,
+    "train_subjects": [
+      "S11",
+      "S13",
+      "S14",
+      "S15",
+      "S16",
+      "S17",
+      "S2",
+      "S3",
+      "S5",
+      "S7",
+      "S8",
+      "S9"
+    ],
+    "test_subjects": [
+      "S10",
+      "S4",
+      "S6"
+    ],
+    "class_distribution": {
+      "Non-Stress": 285,
+      "Stress": 157
+    },
+    "metrics": {
+      "accuracy": 0.875,
+      "weighted_precision": 0.8858471074380166,
+      "weighted_recall": 0.875,
+      "weighted_f1_score": 0.8689599631845375
+    },
+    "confusion_matrix": {
+      "labels": [
+        "Non-Stress",
+        "Stress"
+      ],
+      "matrix": [
+        [
+          56,
+          1
+        ],
+        [
+          10,
+          21
+        ]
+      ]
+    },
+    "feature_importances": {
+      "heart_rate": 0.476724488150802,
+      "eda": 0.16071563369585434,
+      "temperature": 0.1443264067896909,
+      "respiration": 0.021564999245864476,
+      "eda_std": 0.19666847211778823
+    }
+  }
+}
